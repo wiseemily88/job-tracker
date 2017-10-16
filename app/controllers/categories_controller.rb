@@ -2,13 +2,14 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.all
-  end  
+  end
 
   def new
     @category = Category.new
   end
 
   def create
+
     @category = Category.new(category_params)
     if @category.save
       flash[:success] = "#{@category.title} added!"
@@ -19,9 +20,8 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    category = Category.find(params[:id])
+    @category = Category.find(params[:id])
   end
-
 
 
   private
