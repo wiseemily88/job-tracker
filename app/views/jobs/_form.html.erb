@@ -13,10 +13,7 @@
 
   <%= f.label :category %>
   <%= f.select :category, Category.all.pluck(:title) %>
-<<<<<<< HEAD
   <%= link_to "Create a New Category", new_category_path %>
-=======
->>>>>>> contacts
 
   <%= f.submit %>
 <% end %>
