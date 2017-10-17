@@ -39,7 +39,9 @@ class JobsController < ApplicationController
 
   def update
     @company = Company.find(params[:company_id])
+    @category= Category.find_by(title: category_params[:category])
     @job = Job.find(params[:id])
+    @job.category = @category
     @job.update(job_params)
     if @job.save
       flash[:success] = "#{@job.title} updated!"
