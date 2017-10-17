@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-xdescribe "User can create a new Job" do
+describe "User can create a new Job" do
   scenario "a can update an existing Job" do
     company = Company.create!(name: "ESPN")
     category = Category.create!(title: "Web Development")
