@@ -8,6 +8,7 @@ describe "User creates a new comment" do
 
     visit company_job_path(company, job)
 
+
     fill_in "comment[content]", with: "The Hiring manager was great!"
     click_button "Submit"
 

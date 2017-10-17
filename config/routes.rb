@@ -3,10 +3,14 @@ Rails.application.routes.draw do
     resources :jobs, only: [:show]
   end
 
+  resources :companies do
+    resources :contacts, only: [:create, :new, :show]
+  end  
+
 
   resources :companies do
     resources :jobs do
-      resources :comments, only: [:show, :new, :create, :edit, :update]
+      resources :comments, only: [:show, :new, :create]
     end
   end
 
