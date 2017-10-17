@@ -1,5 +1,10 @@
 class ContactsController < ApplicationController
 
+  def new
+    @company = Company.find(params[:company_id])
+    @contact = Contact.new()
+  end
+
   def create
     @company = Company.find(params[:company_id])
     @job= Job.find(params[:job_id])
