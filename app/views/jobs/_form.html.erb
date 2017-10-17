@@ -11,5 +11,8 @@
   <%= f.label :city %>
   <%= f.text_field :city %>
 
+  <%= f.label :category %>
+  <%= f.select :category, Category.all.pluck(:title) %>
+
   <%= f.submit %>
 <% end %>
