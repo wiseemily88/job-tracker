@@ -11,7 +11,10 @@ RSpec.describe Comment do
 
     context "valid attributes" do
       it "is valid with content" do
-        comment = Comment.new(content: "testing")
+        company = Company.new(name: "Turing")
+        category = Category.new(title: "Web Development")
+        job = Job.new(title: "Developer", level_of_interest: 40, city: "Denver", company: company, category: category)
+        comment = Comment.new(content: "testing", job: job)
         expect(comment).to be_valid
       end
     end
@@ -19,11 +22,14 @@ RSpec.describe Comment do
 
   describe "relationships" do
     it "belongs to jobs" do
-      comment = Comment.new(content: "This is the best job!")
+      company = Company.new(name: "Turing")
+      category = Category.new(title: "Web Development")
+      job = Job.new(title: "Developer", level_of_interest: 40, city: "Denver", company: company, category: category)
+      comment = Comment.new(content: "This is the best job!", job: job)
       expect(company).to respond_to(:jobs)
     end
   end
-  
+
 
 
 
