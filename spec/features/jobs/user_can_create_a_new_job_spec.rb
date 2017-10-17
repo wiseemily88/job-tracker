@@ -11,7 +11,11 @@ describe "User can create a new Job" do
     fill_in "job[level_of_interest]", with: 80
     fill_in "job[city]", with: "Denver"
 
+<<<<<<< HEAD
     select('Web Development', from: "job_category")
+=======
+
+>>>>>>> contacts
 
 
     click_button "Create"
