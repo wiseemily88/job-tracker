@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "User can create a new Job" do
+xdescribe "User can create a new Job" do
   scenario "a can update an existing Job" do
     company = Company.create!(name: "ESPN")
     category = Category.create!(title: "Web Development")
@@ -12,9 +12,6 @@ describe "User can create a new Job" do
     fill_in "job[city]", with: "Denver"
 
     select('Web Development', from: "job_category")
-
-
-
 
 
     click_button "Create"

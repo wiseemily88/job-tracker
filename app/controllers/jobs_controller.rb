@@ -14,8 +14,6 @@ class JobsController < ApplicationController
     @category= Category.find_by(title: category_params[:category])
     @job = @company.jobs.new(job_params)
     @job.category = @category
-  
-    binding.pry
 
     if @job.save
       flash[:success] = "You created #{@job.title} at #{@company.name}"
