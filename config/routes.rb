@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
+  get '/dashboard' => 'dashboard#index'
+  
   resources :categories do
     resources :jobs, only: [:show]
   end
 
   resources :companies do
     resources :contacts, only: [:create, :new, :show]
-  end  
+  end
 
 
   resources :companies do

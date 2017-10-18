@@ -1,0 +1,11 @@
+<h1> Dashboard! </h1>
+<p Count of jobs by level of interest:>
+  <ul>
+  <% level_of_interest = @jobs.by_level_of_interest%>
+  <% level_of_interest.each do |k , v| %>
+    <li> Level of Interest: <%= k %> </li>
+    <li> Count: <%= v %> </li>
+  <% end %>
+</ul>
+</p>
+<
