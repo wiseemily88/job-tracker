@@ -1,8 +1,11 @@
 class JobsController < ApplicationController
   def index
-    if params[:sort]
+    if params[:sort] == "location"
       @company = Company.find(params[:company_id])
       @jobs = @company.jobs.order(:city)
+    elsif params[:sort] =="interest"
+      @company = Company.find(params[:company_id])
+      @jobs = @company.jobs.order(:level_of_interest)
     else
       @company = Company.find(params[:company_id])
       @jobs = @company.jobs
@@ -71,5 +74,9 @@ class JobsController < ApplicationController
 
   def category_params
     params.require(:job).permit(:category)
+  end
+
+  def filtering_params(params)
+    params.slice(:city, :location, :starts_with)
   end
 end

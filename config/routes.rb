@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get '/dashboard' => 'dashboard#index'
-  
+  # get '/jobs' => 'jobs#index' as: :location
   resources :categories do
     resources :jobs, only: [:show]
   end
