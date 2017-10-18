@@ -15,7 +15,7 @@ class ContactsController < ApplicationController
     @contact = @company.contacts.new(contact_params)
     @contact.save
 
-    redirect_to company_contact_path(@company, @contact)
+    redirect_to company_jobs_path(@company)
   end
 
   private
