@@ -1,5 +1,5 @@
 <h1> Dashboard! </h1>
-<p Count of jobs by level of interest:>
+<p> Count of jobs by level of interest: </p>
   <ul>
   <% level_of_interest = @jobs.by_level_of_interest%>
   <% level_of_interest.each do |k , v| %>
@@ -7,5 +7,11 @@
     <li> Count: <%= v %> </li>
   <% end %>
 </ul>
-</p>
-<
+<p> Top 3 Companies by level of interest: </p>
+  <ul>
+  <% top_companies= @companies.top_companies_by_level_of_interest%>
+  <% top_companies.each do |company| %>
+    <li> Company: <%= company.name %> </li>
+    <li> Average Level of Interest: <%= company.average %> </li>
+  <% end %>
+</ul>
