@@ -11,9 +11,12 @@ describe "User creates a new comment" do
 
     fill_in "comment[content]", with: "The Hiring manager was great!"
     click_button "Submit"
+    fill_in "comment[content]", with: "You can bring your dog to work!"
+    click_button "Submit"
 
     expect(current_path).to eq(company_job_path(company, job))
     expect(page).to have_content("Hiring manager")
-    expect(Comment.count).to eq(1)
+    expect(page).to have_content("Posted")
+    expect(Comment.count).to eq(2)
   end
 end
