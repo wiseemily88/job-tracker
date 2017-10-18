@@ -15,3 +15,11 @@
     <li> Average Level of Interest: <%= company.average %> </li>
   <% end %>
 </ul>
+<p> Count of Jobs by Location: </p>
+  <ul>
+  <% location = @jobs.by_location%>
+  <% location.each do |k, v| %>
+    <li> City: <%= k %> </li>
+    <li> Count: <%= v %> </li>
+  <% end %>
+</ul>
