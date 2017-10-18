@@ -1,0 +1,7 @@
+All Jobs for <strong><%= @company.name %></strong>
+
+<% @company.contacts.each do |contact| %>
+  <ul><%= contact.full_name %></ul>
+  <ul><%= contact.position %></ul>
+  <ul><%= contact.email %></ul>
+<% end %>

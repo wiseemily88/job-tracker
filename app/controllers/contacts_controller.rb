@@ -1,5 +1,10 @@
 class ContactsController < ApplicationController
 
+  def show
+    @company = Company.find(params[:company_id])
+    @contact = Contact.find(params[:id])
+  end
+
   def new
     @company = Company.find(params[:company_id])
     @contact = Contact.new()
@@ -7,12 +12,10 @@ class ContactsController < ApplicationController
 
   def create
     @company = Company.find(params[:company_id])
-    @job= Job.find(params[:job_id])
-    @contact = Contact.new(contact_params)
-    @comment.company_id = params[:company_id]
+    @contact = @company.contacts.new(contact_params)
     @contact.save
 
-    redirect_to company_job_path(@company, @job)
+    redirect_to company_contact_path(@company, @contact)
   end
 
   private
@@ -20,4 +23,5 @@ class ContactsController < ApplicationController
   def contact_params
     params.require(:contact).permit(:full_name, :position, :email)
   end
+
 end
