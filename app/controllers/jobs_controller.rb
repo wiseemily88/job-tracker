@@ -66,11 +66,25 @@ class JobsController < ApplicationController
     redirect_to company_jobs_path(@company, @job)
   end
 
-  def location
-    if params[:location]
+  def query
+    if params[:sort] == "location"
+      @jobs = Job.order(:city)
+    elsif params[:sort] =="interest"
+      @jobs = Job.order(:level_of_interest)
+    elsif params[:location]
       @jobs = Job.where(city: params[:location])
     end
   end
+
+end
+
+#     def index
+#       @jobs = Job.where(nil)
+#   filtering_params(params).each do |key, value|
+#     @products = @products.public_send(key, value) if value.present?
+#   end
+# end
+#   end
 
   private
 
@@ -82,7 +96,7 @@ class JobsController < ApplicationController
     params.require(:job).permit(:category)
   end
 
-  def filtering_params(params)
-    params.slice(:city, :location, :starts_with)
-  end
-end
+
+  # def filtering_params(params)
+  #   params.slice(:city, :level_of_interest)
+  # end

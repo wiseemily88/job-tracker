@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get '/dashboard' => 'dashboard#index'
 
-  get '/jobs' => 'jobs#location', as: :location
+  get '/jobs' => 'jobs#query', as: :query
 
   resources :categories do
     resources :jobs, only: [:show]
