@@ -18,8 +18,8 @@
 <p> Count of Jobs by Location: </p>
   <ul>
   <% location = @jobs.by_location%>
-  <% location.each do |k, v| %>
-    <li> City: <%= k %> </li>
-    <li> Count: <%= v %> </li>
+  <% location.each do |location, count| %>
+    <li><%= link_to "#{location}", "/jobs?location=#{location}" %>
+    <li> Count: <%= count %> </li>
   <% end %>
 </ul>

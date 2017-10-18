@@ -66,6 +66,12 @@ class JobsController < ApplicationController
     redirect_to company_jobs_path(@company, @job)
   end
 
+  def location
+    if params[:location]
+      @jobs = Job.where(city: params[:location])
+    end
+  end
+
   private
 
   def job_params
