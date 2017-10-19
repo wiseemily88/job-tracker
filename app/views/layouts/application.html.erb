@@ -13,11 +13,7 @@
       <%= link_to "Dashboard", dashboard_path %>
     </nav>
            <%= yield %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+      
 
   <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, class: name %>

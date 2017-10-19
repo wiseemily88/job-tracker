@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get '/jobs' => 'jobs#query', as: :query
 
+  get '/' => 'jobs#home', as: :home
+
   resources :categories do
     resources :jobs, only: [:show]
   end

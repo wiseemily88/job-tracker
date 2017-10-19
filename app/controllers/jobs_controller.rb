@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
   def index
-      @company = Company.find(params[:company_id])
-      @jobs = @company.jobs
+    @company = Company.find(params[:company_id])
+    @jobs = @company.jobs
   end
 
   def new
@@ -66,6 +66,10 @@ class JobsController < ApplicationController
     elsif params[:location]
       @jobs = Job.where(city: params[:location])
     end
+  end
+
+  def home
+    render :welcome
   end
 
 end
