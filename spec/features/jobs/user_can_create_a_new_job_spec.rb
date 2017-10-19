@@ -14,7 +14,7 @@ describe "User can create a new Job" do
     select('Web Development', from: "job_category")
 
 
-    click_button "Create"
+    click_button "submit"
 
     expect(current_path).to eq("/companies/#{company.id}/jobs/#{Job.last.id}")
     expect(page).to have_content("ESPN")

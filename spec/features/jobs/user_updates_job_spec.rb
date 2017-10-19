@@ -9,7 +9,7 @@ describe "User can edit an existing job" do
 
     fill_in "job[title]", with: "Marketing Analyst"
 
-    click_button "Update Job"
+    click_button "submit"
 
     expect(current_path).to eq("/companies/#{Company.last.id}/jobs/#{Job.last.id}")
     expect(page).to have_content("Marketing Analyst")
