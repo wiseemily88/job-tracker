@@ -1,28 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>JobTracker</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title>Job Tracker</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container">
-  <div class="row">
-    <div class="col-xs-3"></div>
-    <div class="col-xs-9">
-      <div class="row">
-        <div class="col-xs-6">
-          <div class="row">
-            <div class="col-xs-6"></div>
-            <div class="col-xs-6"></div>
-          </div>
-        </div>
-        <div class="col-xs-6">
-          <div class="row">
-            <div class="col-xs-6"></div>
-            <div class="col-xs-6"></div>
-          </div>
+  <nav>
+      <%= link_to "All Companies", companies_path %>
+      <%= link_to "All Categories", categories_path %>
+      <%= link_to "Dashboard", dashboard_path %>
+    </nav>
            <%= yield %>
         </div>
       </div>

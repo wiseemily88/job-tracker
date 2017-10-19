@@ -1,0 +1,21 @@
+
+
+body{
+h1{
+  border: $custom-border;
+    text: {
+      decoration: line-through;
+      align: center;
+    }
+}
+  ul {
+    border: $custom-border;
+    .title{
+      color: $custom-color;
+      font-weight: bold;
+      }
+  .description{
+    color: $custom-color;
+    }
+  }
+}
