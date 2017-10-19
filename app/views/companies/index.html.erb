@@ -1,11 +1,17 @@
 <h1>All Companies</h1>
 
-<ul>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Tealeaf Todo</a>
+    </div>
+  </div>
+</nav>
+
   <% @companies.each do |company| %>
-  <li class=company_<%= company.id %>>
-    <%= link_to company.name, company_path(company) %>:
-    <%= link_to "Edit", edit_company_path(company) %>
-    <%= link_to "Delete", company_path(company), method: "delete" %>
-  </li>
-  <% end %>
-</ul>
+  <div class=company_<%= company.id %>>
+    <td><%= link_to "#{company.name}", company_path(company), class: 'btn btn-primary btn-lg' %></td>
+    <td><%= link_to "Edit", edit_company_path(company), class: 'btn btn-success' %></td>
+    <td><%= link_to "Delete", company_path(company), method: "delete", class: 'btn btn-danger btn-sm' %></td>
+  <% end %> 
+</div> <br>

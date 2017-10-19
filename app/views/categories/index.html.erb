@@ -1,11 +1,18 @@
-<h3>All Categories</h3>
+<h1>All Categories</h1>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Tealeaf Todo</a>
+    </div>
+  </div>
+</nav>
 
 <ul>
   <% @categories.each do |category| %>
-  <li class="category"<%= category.id %>>
-    <%= link_to category.title, category_path(category) %>:
-    <%= link_to "Edit", edit_category_path(category) %>
-    <%= link_to "Delete", category_path(category), method: "delete" %>
-  </li>
+  <div class="category"<%= category.id %>>
+    <td><%= link_to "#{category.title}", category_path(category), class: 'btn btn-primary btn-lg' %></td>
+    <td><%= link_to "Edit", edit_category_path(category), class: 'btn btn-success' %></td>
+    <td><%= link_to "Delete", category_path(category), method: "delete", class: 'btn btn-danger btn-sm' %></td>
+  </div> <br>
   <% end %>
 </ul>

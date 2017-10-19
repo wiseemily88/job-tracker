@@ -1,17 +1,14 @@
-Title: <%= @job.title %>
+<h1> Job Title: <%= @job.title %></h1>
+<div class="row">
+  <div class="col-md-6">
+
+    <h4>Description: <%= @job.description %></h4>
+    <h4>Level of Interest: <%= @job.level_of_interest %></h4>
+    <h4>City: <%= @job.city %></h4>
+    <h4>Company: <%= link_to @job.company.name, company_path(@job.company) %></h4>
+  </div>
+</div>
 <br>
-
-Description: <%= @job.description %>
-<br>
-
-Level of Interest: <%= @job.level_of_interest %>
-<br>
-
-City: <%= @job.city %>
-<br>
-
-Company: <%= link_to @job.company.name, company_path(@job.company) %>
-
 <h3>Comments</h3>
 <%= render partial: 'jobs/comment', collection: @job.comments %>
 <%= render partial: 'comments/form' %>

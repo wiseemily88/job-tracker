@@ -1,17 +1,17 @@
-All Jobs for <strong><%= @company.name %></strong>
+<h1>All Jobs for <strong><%= @company.name %></strong></h1>
 
 <% @jobs.each do |job| %>
-  <ul class="jobs">
-    <li><%= job.title %> at <%= job.company.name %></li>
-   <li><%= link_to "Edit", edit_company_job_path(@company, job) %> </li>
-   <li><%= link_to "Delete", company_job_path(@company, job), method: :delete %> </li>
- </ul>
+  <div class="jobs">
+      <td><%= job.title %> at <%= job.company.name  %></td>
+      <td><%= link_to "Edit", edit_company_job_path(@company, job), class: 'btn btn-success' %></td>
+      <td><%= link_to "Delete", company_job_path(@company, job), method: "delete", class: 'btn btn-danger btn-sm' %></td>
+    </div> <br>
 <% end %>
 
-<p><%= link_to "Add a Contact", new_company_contact_path(@company) %></p>
+<td><%= link_to "Add a Contact", new_company_contact_path(@company), class: 'btn btn-info'  %></p>
 
   <% @company.contacts.each do |contact| %>
-    <ul class="contact">
-      <p><%= contact.full_name %> <%= contact.position %><%= contact.email %></p>
+    <div class="contact">
+      <td><%= contact.full_name %> <%=contact.position %> <%=contact.email %></td>
     <% end %>
-  </ul>
+  </div>
