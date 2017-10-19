@@ -56,5 +56,15 @@ describe Job do
 
       expect(Job.by_level_of_interest.values).to eq([3])
     end
+
+    it "by_location" do
+      company = Company.new(name: "Turing")
+      category = Category.new(title: "Web Development")
+      job_1 = Job.create!(title: "Developer", level_of_interest: 40, city: "Denver", company: company, category: category)
+      job_2 = Job.create!(title: "Developer", level_of_interest: 40, city: "Denver", company: company, category: category)
+      job_3 = Job.create!(title: "Developer", level_of_interest: 40, city: "Denver", company: company, category: category)
+
+      expect(Job.by_location.keys).to eq(["Denver"])
+    end
   end
 end
