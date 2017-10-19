@@ -44,4 +44,17 @@ describe Job do
       expect(job).to respond_to(:category)
     end
   end
+
+  describe "Class methods" do
+
+    it "by_level_of_interest" do
+      company = Company.new(name: "Turing")
+      category = Category.new(title: "Web Development")
+      job_1 = Job.create!(title: "Developer", level_of_interest: 40, city: "Denver", company: company, category: category)
+      job_2 = Job.create!(title: "Developer", level_of_interest: 40, city: "Denver", company: company, category: category)
+      job_3 = Job.create!(title: "Developer", level_of_interest: 40, city: "Denver", company: company, category: category)
+
+      expect(Job.by_level_of_interest.values).to eq([3])
+    end
+  end
 end
