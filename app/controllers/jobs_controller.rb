@@ -27,7 +27,6 @@ class JobsController < ApplicationController
     @company = Company.find(params[:company_id])
     @job = Job.find(params[:id])
     @comment = Comment.new
-
   end
 
   def edit
@@ -41,6 +40,7 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
     @job.category = @category
     @job.update(job_params)
+
     if @job.save
       flash[:success] = "#{@job.title} updated!"
       redirect_to company_job_path(@company, @job)
@@ -70,13 +70,6 @@ class JobsController < ApplicationController
 
 end
 
-#     def index
-#       @jobs = Job.where(nil)
-#   filtering_params(params).each do |key, value|
-#     @products = @products.public_send(key, value) if value.present?
-#   end
-# end
-#   end
 
   private
 
@@ -87,8 +80,3 @@ end
   def category_params
     params.require(:job).permit(:category)
   end
-
-
-  # def filtering_params(params)
-  #   params.slice(:city, :level_of_interest)
-  # end

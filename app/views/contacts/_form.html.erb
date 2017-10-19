@@ -1,4 +1,4 @@
-<h1>Create a Contact</h1>
+
 
 <%= form_for [@company, @contact], class: "form-horizantal" do |f| %>
   <p>
@@ -14,6 +14,6 @@
     <%= f.text_area :email %>
   </p>
   <p>
-    <%= f.submit "Submit", id: "Submit"  %>
+    <%= f.submit "Submit", id: "Submit", class: "btn btn-primary btn-block"  %>
   </p>
 <% end %>

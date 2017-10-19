@@ -1,17 +1,19 @@
 <h1>All Jobs for <strong><%= @company.name %></strong></h1>
+<td><%= link_to "Add a New Job", new_company_job_path(@company), class: 'btn btn-info btn-sm'  %></td><br>
+
 
 <% @jobs.each do |job| %>
   <div class="jobs">
-      <td><%= job.title %> at <%= job.company.name  %></td>
-      <td><%= link_to "Edit", edit_company_job_path(@company, job), class: 'btn btn-success' %></td>
+      <td><%= link_to "#{job.title}", company_job_path(job.company_id, job.id), class: 'btn btn-primary btn-lg' %></td>
+      <td><%= link_to "Edit", edit_company_job_path(@company, job), class: 'btn btn-success btn-sm' %></td>
       <td><%= link_to "Delete", company_job_path(@company, job), method: "delete", class: 'btn btn-danger btn-sm' %></td>
     </div> <br>
 <% end %>
 
-<td><%= link_to "Add a Contact", new_company_contact_path(@company), class: 'btn btn-info'  %></p>
+<td><%= link_to "Add a Contact", new_company_contact_path(@company), class: 'btn btn-info'  %></td>
 
   <% @company.contacts.each do |contact| %>
     <div class="contact">
-      <td><%= contact.full_name %> <%=contact.position %> <%=contact.email %></td>
+      <td><%= contact.full_name %> <strong><%=contact.position %> </strong><%=contact.email %></td>
     <% end %>
   </div>

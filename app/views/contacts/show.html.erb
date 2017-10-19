@@ -1,9 +1,0 @@
-<h1>All Contacts for <strong><%= @company.name %></strong></h1>
-
-<% @company.contacts.each do |contact| %>
-  <ul class="contact">
-    <li><%= contact.full_name %></li>
-    <li><%= contact.position %></li>
-    <li><%= contact.email %></li>
-<% end %>
-</ul>

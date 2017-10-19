@@ -2,9 +2,9 @@
 
 <div class="row">
   <div class="col-xs-6">
-    <ul><% @category.jobs.each do |job| %>
-      <li class="Jobs"><%= job.title %></li>
+  <div><% @category.jobs.each do |job| %>
+    <td><%= link_to "#{job.title}", company_job_path(job.company_id, job.id), class: 'btn btn-primary btn-lg' %></td>
       <% end %>
-    </ul>
+    </div>
   </div>
 </div>

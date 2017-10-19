@@ -7,6 +7,7 @@ class Job < ApplicationRecord
 
   def self.by_level_of_interest
     group(:level_of_interest)
+    .order('count_all DESC')
     .count
   end
 

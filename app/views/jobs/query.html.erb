@@ -1,4 +1,4 @@
 <h1> All Jobs per City </h1>
 <% @jobs.each do |job| %>
-<p> <%=job.title%> </p>
+<p><%= link_to "#{job.title}", company_job_path(job.company_id, job.id) %></p>
 <% end %>

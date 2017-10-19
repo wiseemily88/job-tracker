@@ -1,25 +1,21 @@
 <h1> Dashboard! </h1>
-<p> Count of jobs by level of interest: </p>
-  <ul>
+<div class="container-fluid">
+<h3> Count of jobs by level of interest: </h3>
   <% level_of_interest = @jobs.by_level_of_interest%>
   <% level_of_interest.each do |k , v| %>
-    <li> Level of Interest: <%= k %> </li>
-    <li> Count: <%= v %> </li>
+  <p> Level of Interest of <strong><%= k %> </strong> with a count of <%= v %> </p>
   <% end %>
-</ul>
-<p> Top 3 Companies by level of interest: </p>
-  <ul>
+
+<h3> Top 3 Companies by level of interest: </h3>
+
   <% top_companies= @companies.top_companies_by_level_of_interest%>
   <% top_companies.each do |company| %>
-    <li> Company: <%= company.name %> </li>
-    <li> Average Level of Interest: <%= company.average %> </li>
+    <p> Company:<strong> <%= company.name %> </strong> Average Level of Interest: <%= company.average %> </p>
   <% end %>
-</ul>
-<p> Count of Jobs by Location: </p>
-  <ul>
+
+<h3> Count of Jobs by Location: </h3>
   <% location = @jobs.by_location%>
   <% location.each do |location, count| %>
-    <li><%= link_to "#{location}", "/jobs?location=#{location}" %>
-    <li> Count: <%= count %> </li>
+  <p><%= link_to "#{location}", "/jobs?location=#{location}" %> Count: <%= count %> </p>
   <% end %>
-</ul>
+</div>
