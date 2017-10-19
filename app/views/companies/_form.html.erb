@@ -1,4 +1,6 @@
-<%= form_for @company do |f| %>
+
+
+<%= bootstrap_form_for (@company , style: :horizontal, left: "col-sm-2", right: "col-sm-10") do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
 
